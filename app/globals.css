@@ -1,4 +1,108 @@
 body {
-  color: red;
-  background-color: beige;
+  background-image: url("https://cdn.discordapp.com/attachments/1181225884825419787/1203024504096423996/pexels-leaves.jpg?ex=65cf96e0&is=65bd21e0&hm=c198c33ce89cc4f4e878ff31e456b5361532a208d5dbec5181913d3d7ae79e89&");
+  background-size: cover;
+  margin: 0px;
+}
+
+#container {
+  padding-block: 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  margin: 0px;
+}
+
+main #search {
+  -webkit-backdrop-filter: blur(7px);
+          backdrop-filter: blur(7px);
+  background-color: rgba(78, 78, 78, 0.359);
+  border: 3px solid rgba(255, 255, 255, 0.12);
+  color: white;
+  margin-inline: auto;
+  margin-top: 0px;
+  margin-bottom: 1%;
+  display: flex;
+  justify-content: center;
+  width: 300px;
+  height: 70px;
+  border-radius: 36px;
+  align-items: center;
+}
+main #card-top {
+  border: 1px solid black;
+  width: 96vw;
+  height: 100%;
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  -webkit-backdrop-filter: blur(7px);
+          backdrop-filter: blur(7px);
+  background-color: rgba(78, 78, 78, 0.359);
+  border: 3px solid rgba(255, 255, 255, 0.12);
+  color: white;
+}
+main #card-top #time {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  margin-right: 4%;
+  font-size: 200px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+main #card-top #time #colon {
+  display: flex;
+  transform: translateY(-4%);
+  animation: blink 1.5s infinite;
+}
+main #card-top #dateweek {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 3.2rem;
+  margin-left: 25px;
+  margin-top: 25px;
+}
+main #card-top #dateweek #date {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+main #bottomcards {
+  padding-top: 1%;
+  display: flex;
+  justify-content: center;
+  gap: 1.5%;
+}
+main #bottomcards #card-bottom {
+  border: 1px solid black;
+  width: 15.8vw;
+  -webkit-backdrop-filter: blur(7px);
+          backdrop-filter: blur(7px);
+  background-color: rgba(78, 78, 78, 0.359);
+  border: 3px solid rgba(255, 255, 255, 0.12);
+  color: white;
+  border-radius: 24px;
+  height: 40vh;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+}
+main #bottomcards #card-bottom #date {
+  margin-top: 34vh;
+  font-size: 1.5rem;
+  font-weight: 100;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=globals.css.map */
