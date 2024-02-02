@@ -54,6 +54,29 @@ main #card-top:hover {
   border: 3px solid rgba(255, 255, 255, 0.754);
   transform: scale(1.02);
 }
+main #card-top #bar {
+  height: 90%;
+  width: 3px;
+  background-color: rgba(128, 128, 128, 0.494);
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10px;
+  -webkit-backdrop-filter: blur(24px);
+          backdrop-filter: blur(24px);
+}
+main #card-top #weather {
+  width: 13vw;
+  height: auto;
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: auto;
+  padding-inline: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
 main #card-top #time {
   margin-left: auto;
   display: flex;
