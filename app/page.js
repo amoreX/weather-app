@@ -18,12 +18,12 @@ export default function Home() {
 
       <div id="bottomcards">
 
-      <Cardbot day={actuallist[1]}></Cardbot>
-      <Cardbot day={actuallist[2]}></Cardbot>
-      <Cardbot day={actuallist[3]}></Cardbot>
-      <Cardbot day={actuallist[4]}></Cardbot>
-      <Cardbot day={actuallist[5]}></Cardbot>
-      <Cardbot day={actuallist[6]}></Cardbot>
+      <Cardbot day={actuallist[1]} temp="20"></Cardbot>
+      <Cardbot day={actuallist[2]} temp="20"></Cardbot>
+      <Cardbot day={actuallist[3]} temp="20"></Cardbot>
+      <Cardbot day={actuallist[4]} temp="20"></Cardbot>
+      <Cardbot day={actuallist[5]} temp="20"></Cardbot>
+      <Cardbot day={actuallist[6]} temp="20"></Cardbot>
       
       </div>
       </div>

@@ -4,7 +4,7 @@ export default function time(){
 
     return(
         <div id="time">
-            {d.getHours()}<div id="colon"> : </div>{d.getMinutes() < 10 ? `0${d.getMinutes()}` : d.getMinutes()}
+            {d.getHours() < 10 ? `0${d.getHours()}` : d.getHours()}<div id="colon"> : </div>{d.getMinutes() < 10 ? `0${d.getMinutes()}` : d.getMinutes()}
         </div>
     )
     }
