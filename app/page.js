@@ -9,20 +9,17 @@ export default function Home() {
 	const initial = daysOfWeek.slice(0, today);
 	const later = daysOfWeek.slice(today, 7);
 	const actuallist = [...later, ...initial];
+	const anotherlist = actuallist.slice(1);
 
 	return (
 		<main>
 			<div id="container">
 				<Search></Search>
 				<Cardtop day={actuallist[0]}></Cardtop>
-
 				<div id="bottomcards">
-					<Cardbot day={actuallist[1]} temp="20"></Cardbot>
-					<Cardbot day={actuallist[2]} temp="20"></Cardbot>
-					<Cardbot day={actuallist[3]} temp="20"></Cardbot>
-					<Cardbot day={actuallist[4]} temp="20"></Cardbot>
-					<Cardbot day={actuallist[5]} temp="20"></Cardbot>
-					<Cardbot day={actuallist[6]} temp="20"></Cardbot>
+					{anotherlist.map((days, index) => {
+						return <Cardbot day={days} temp="20"></Cardbot>;
+					})}
 				</div>
 			</div>
 		</main>
