@@ -1,4 +1,4 @@
-
+"use Client"
 
 export function getLocation() {
 	
