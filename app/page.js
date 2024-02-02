@@ -1,7 +1,7 @@
 import Cardtop from "./Components/Cardtop";
 import Cardbot from "./Components/Cardbottom";
 import Search from "./Components/Search";
-import { getLocation } from "./Utils/coordss";
+
 export default function Home() {
 	const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 	const today = new Date().getDay();
@@ -9,7 +9,6 @@ export default function Home() {
 	const initial = daysOfWeek.slice(0, today);
 	const later = daysOfWeek.slice(today, 7);
 	const actuallist = [...later, ...initial];
-	getLocation();
 
 	return (
 		<main>
