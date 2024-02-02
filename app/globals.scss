@@ -2,6 +2,7 @@ body{
 	background-image: url('https://cdn.discordapp.com/attachments/1181225884825419787/1203024504096423996/pexels-leaves.jpg?ex=65cf96e0&is=65bd21e0&hm=c198c33ce89cc4f4e878ff31e456b5361532a208d5dbec5181913d3d7ae79e89&');
 	background-size:cover;
 	margin:0px;
+	cursor:default;
 }
 @mixin blur($val){
 	backdrop-filter: blur(7px);
@@ -41,6 +42,7 @@ main{
 		
 	}
 	#card-top{
+		
 		border:1px solid black;
 		width:96vw;
 		height:100%;
@@ -57,6 +59,7 @@ main{
 			margin-right:4%;
 			font-size: 200px;
 			font-family:Arial, Helvetica, sans-serif;
+			
 
 			#colon{
 				display:flex;
