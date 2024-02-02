@@ -18,7 +18,7 @@ export default function Home() {
 				<Cardtop day={actuallist[0]}></Cardtop>
 				<div id="bottomcards">
 					{anotherlist.map((days, index) => {
-						return <Cardbot day={days} temp="20"></Cardbot>;
+						return <Cardbot day={days} key="" temp="20"></Cardbot>;
 					})}
 				</div>
 			</div>
