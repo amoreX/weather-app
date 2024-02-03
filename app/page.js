@@ -3,6 +3,7 @@
 import Cardtop from "./Components/Cardtop";
 import Cardbot from "./Components/Cardbottom";
 import Search from "./Components/Search";
+import Git from "./Components/Github";
 import Modall from "./Components/Placesearch";
 import { getcoords } from "./Utils/getcoords";
 import { placename } from "./Utils/placename";
@@ -108,6 +109,7 @@ export default function Home() {
 				</motion.div>
 			</motion.div>
 			<div id="container">
+        <Git/>
 				<Search iscllick={handleisclick} placename={place}></Search>
 
 				<Cardtop

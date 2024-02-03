@@ -263,11 +263,48 @@ main #modal {
   align-items: center;
   height: 100vh;
   z-index: 5;
+  gap: 10px;
   width: 100vw;
   transform: translateY(-15px);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   margin: 0px;
+}
+main #modal #placetosearch {
+  width: 20vw;
+  height: 30px;
+  -webkit-backdrop-filter: blur(7px);
+          backdrop-filter: blur(7px);
+  background-color: rgba(78, 78, 78, 0.359);
+  border: 3px solid rgba(255, 255, 255, 0.12);
+  color: white;
+  transition: border 0.38s ease-in-out;
+  outline: none;
+  border-radius: 36px;
+  padding: 7px;
+}
+main #modal #placetosearch:hover {
+  border: 3px solid rgba(255, 255, 255, 0.754);
+}
+main #modal #placetosearch:hover {
+  outline: none;
+}
+main #modal #placetosearch:focus {
+  background-color: white;
+  color: black;
+  font-size: 1rem;
+}
+main #modal button {
+  border-radius: 36px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: 0.38s ease-in-out;
+}
+main #modal button:hover {
+  border-radius: 7px;
+  transform: scale(0.9);
 }
 
 @keyframes blink {
@@ -309,4 +346,19 @@ main #modal {
     scale: 1;
     transform: rotate(360deg);
   }
+}
+#git {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  padding: 5px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  transition: 0.38s ease-in-out;
+  cursor: pointer;
+}
+#git:hover {
+  transform: scale(1.05) rotate(360deg);
 }/*# sourceMappingURL=globals.css.map */
