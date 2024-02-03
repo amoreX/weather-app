@@ -2,6 +2,7 @@ body {
   background-image: url("https://cdn.discordapp.com/attachments/1181225884825419787/1203024504096423996/pexels-leaves.jpg?ex=65cf96e0&is=65bd21e0&hm=c198c33ce89cc4f4e878ff31e456b5361532a208d5dbec5181913d3d7ae79e89&");
   background-size: cover;
   margin: 0px;
+  overflow: hidden;
   cursor: default;
 }
 
@@ -21,7 +22,7 @@ main #search {
   background-color: rgba(78, 78, 78, 0.359);
   border: 3px solid rgba(255, 255, 255, 0.12);
   color: white;
-  transition: 0.38s ease-in-out;
+  transition: border 0.38s ease-in-out;
   margin-inline: auto;
   margin-top: 0px;
   margin-bottom: 1%;
@@ -34,7 +35,6 @@ main #search {
 }
 main #search:hover {
   border: 3px solid rgba(255, 255, 255, 0.754);
-  transform: scale(1);
 }
 main #card-top {
   border: 1px solid black;
@@ -48,11 +48,10 @@ main #card-top {
   background-color: rgba(78, 78, 78, 0.359);
   border: 3px solid rgba(255, 255, 255, 0.12);
   color: white;
-  transition: 0.38s ease-in-out;
+  transition: border 0.38s ease-in-out;
 }
 main #card-top:hover {
   border: 3px solid rgba(255, 255, 255, 0.754);
-  transform: scale(1.02);
 }
 main #card-top #bar {
   height: 90%;
@@ -110,6 +109,7 @@ main #bottomcards {
   gap: 1.5%;
 }
 main #bottomcards #card-bottom {
+  overflow: hidden;
   border: 1px solid black;
   width: 15.8vw;
   -webkit-backdrop-filter: blur(7px);
@@ -117,7 +117,7 @@ main #bottomcards #card-bottom {
   background-color: rgba(78, 78, 78, 0.359);
   border: 3px solid rgba(255, 255, 255, 0.12);
   color: white;
-  transition: 0.38s ease-in-out;
+  transition: border 0.38s ease-in-out;
   border-radius: 24px;
   height: 40vh;
   min-height: 200px;
@@ -127,7 +127,6 @@ main #bottomcards #card-bottom {
 }
 main #bottomcards #card-bottom:hover {
   border: 3px solid rgba(255, 255, 255, 0.754);
-  transform: scale(1.05);
 }
 main #bottomcards #card-bottom #date {
   margin-top: auto;
@@ -173,5 +172,34 @@ main #bottomcards #card-bottom #mintemp {
   }
   100% {
     opacity: 1;
+  }
+}
+#load {
+  position: absolute;
+  height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  color: White;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  z-index: 3;
+  font-size: 3rem;
+}
+#load #sun {
+  line-height: 3rem;
+  animation: goofy 1.2s infinite linear;
+}
+
+@keyframes goofy {
+  0% {
+    scale: 1;
+    transform: rotate(0deg);
+  }
+  100% {
+    scale: 1;
+    transform: rotate(360deg);
   }
 }/*# sourceMappingURL=globals.css.map */

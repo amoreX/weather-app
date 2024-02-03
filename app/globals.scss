@@ -2,6 +2,7 @@ body{
 	background-image: url('https://cdn.discordapp.com/attachments/1181225884825419787/1203024504096423996/pexels-leaves.jpg?ex=65cf96e0&is=65bd21e0&hm=c198c33ce89cc4f4e878ff31e456b5361532a208d5dbec5181913d3d7ae79e89&');
 	background-size:cover;
 	margin:0px;
+	overflow: hidden;
 	cursor:default;
 }
 @mixin blur($val){
@@ -9,10 +10,10 @@ body{
 	background-color: rgba(78, 78, 78, 0.359);
 	border: 3px solid rgba(255,255,255,0.12);
 	color:white;
-	transition:0.38s ease-in-out;
+	transition:border 0.38s ease-in-out;
 	&:hover{
 		border: 3px solid rgba(255, 255, 255, 0.754);
-		transform:scale($val);
+		
 
 	}
 }
@@ -115,7 +116,9 @@ main{
 		display: flex;
 		justify-content: center;
 		gap:1.5%;
+		
 		#card-bottom{
+			overflow: hidden;
 			border:1px solid black;
 			width:15.8vw;
 			@include blur(1.05) ;
@@ -177,4 +180,36 @@ main{
 	100%{
 		opacity:1;
 	}
+}
+
+#load{
+	position:absolute;
+	height:100vh;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	width:100vw;
+	display:flex;
+	flex-direction: column;
+	color:White;
+	justify-content: center;
+	align-items: center;
+	background-color: black;
+	z-index: 3;
+	font-size: 3rem;
+
+	#sun{
+		line-height: 3rem;
+		animation:goofy 1.2s infinite linear;
+	}
+}
+
+@keyframes goofy {
+	0%{
+		scale:1;
+		transform:rotate(0deg);
+	}
+	100%{
+		scale:1;
+		transform:rotate(360deg);
+	}
+	
 }

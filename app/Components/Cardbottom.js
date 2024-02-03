@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 export default function cardbottom(props) {
 	const cloudy = (
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" className="icon" version="1.1">
@@ -70,11 +71,76 @@ export default function cardbottom(props) {
 		}
 	};
 	return (
-		<div id="card-bottom">
-			<div id="temp">{props.temp}°C</div>
+		<motion.div
+			initial={{
+				scale: 0.1,
+			}}
+			transition={{
+				delay: 3.5+(props.index * 0.15),
+				type: "tween",
+				ease: "anticipate",
+				duration: 0.6,
+			}}
+			whileHover={{
+				scale: 1.05,
+				transition: {
+					type: "tween",
+					ease: "easeInOut",
+				},
+			}}
+			animate={{
+				scale: 1,
+			}}
+			id="card-bottom"
+		>
+			<motion.div initial={{
+                x:-100,
+                opacity: 0.
+            }} 
+            animate={{
+                x:0,
+                opacity: 1,
+            }} 
+            transition={{
+                delay: (props.index * 0.15)+4.5,
+                type: "tween",
+                ease: "anticipate",
+                duration: 0.6,
+            }} 
+            id="temp">
+				{props.temp}°C
+			</motion.div>
 			<div id="weather">{choice[calcweather()]}</div>
-			<div id="mintemp">{props.tempmin}°C</div>
-			<div id="date">{props.day}</div>
-		</div>
+			<motion.div initial={{
+                x:100,
+                opacity: 0.
+            }} 
+            animate={{
+                x:0,
+                opacity: 1,
+            }} 
+            transition={{
+                delay: (props.index * 0.15)+4.5,
+                type: "tween",
+                ease: "anticipate",
+                duration: 0.6,
+            }}
+            id="mintemp">{props.tempmin}°C</motion.div>
+			<motion.div initial={{
+                y:100,
+                opacity: 0.
+            }} 
+            animate={{
+                y:0,
+                opacity: 1,
+            }} 
+            transition={{
+                delay: (props.index * 0.15)+5,
+                type: "tween",
+                ease: "anticipate",
+                duration: 0.6,
+            }}
+            id="date">{props.day}</motion.div>
+		</motion.div>
 	);
 }

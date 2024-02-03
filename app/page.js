@@ -5,6 +5,7 @@ import Cardbot from "./Components/Cardbottom";
 import Search from "./Components/Search";
 import { useState, useEffect } from "react";
 import { coords } from "./Utils/Coords";
+import { motion } from "framer-motion";
 
 export default function Home() {
 	const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -42,6 +43,35 @@ export default function Home() {
 	}, [weather]);
 	return (
 		<main>
+			<motion.div
+				initial={{
+					opacity: 1,
+				}}
+				transition={{
+					delay: 3,
+				}}
+				animate={{
+					opacity: 0,
+					pointerEvents: "none",
+				}}
+				id="load"
+			>
+				<div id="sun">☀️</div>
+				<motion.div
+					initial={{ y: 30, opacity: 0 }}
+					animate={{ y: 0, opacity: 1 }}
+					transition={{ delay: 0.5, type: "tween", ease: "easeIn" }}
+				>
+					Hello
+				</motion.div>
+				<motion.div
+					initial={{ y: 30, opacity: 0 }}
+					animate={{ y: 0, opacity: 1 }}
+					transition={{ delay: 1, type: "tween", ease: "easeIn" }}
+				>
+					Getting your site Ready ;){" "}
+				</motion.div>
+			</motion.div>
 			<div id="container">
 				<Search></Search>
 				<Cardtop day={actuallist[0]} weathercond={weather?.current.weather_code}></Cardtop>
@@ -51,6 +81,7 @@ export default function Home() {
 							<Cardbot
 								day={days}
 								key=""
+								index={index}
 								temp={weather?.daily.temperature_2m_max.slice(1)[index]}
 								tempmin={weather?.daily.temperature_2m_min.slice(1)[index]}
 								weathercond={weather?.daily.weather_code.slice(1)[index]}
