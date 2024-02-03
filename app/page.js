@@ -1,6 +1,10 @@
+"use client";
+
 import Cardtop from "./Components/Cardtop";
 import Cardbot from "./Components/Cardbottom";
 import Search from "./Components/Search";
+import { useState,useEffect } from "react";
+import { coords } from "./Utils/Coords";
 
 export default function Home() {
 	const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -10,6 +14,12 @@ export default function Home() {
 	const later = daysOfWeek.slice(today, 7);
 	const actuallist = [...later, ...initial];
 	const anotherlist = actuallist.slice(1);
+
+  useEffect(() => {
+    if (navigator.geolocation){
+      coords();
+    }
+  },[navigator.geolocation]);
 
 	return (
 		<main>
@@ -21,6 +31,7 @@ export default function Home() {
 						return <Cardbot day={days} key="" temp="20"></Cardbot>;
 					})}
 				</div>
+				
 			</div>
 		</main>
 	);
