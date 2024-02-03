@@ -170,8 +170,8 @@ export default function cardtop(props) {
 				{props.day}
 				<div id="date"> {getFormattedDate()} </div>
 				<div id="feel">
-					{props.feel}
-					<div id="feeltext"> Feels like</div>
+					{props.feel}°C
+					
 				</div>
 				<div id="highlow">
 					<div id="maxup"><div id="arrow">{arrow}</div><div>{props.high}</div></div>

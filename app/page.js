@@ -16,6 +16,14 @@ export default function Home() {
 	const [lat, setLat] = useState(0);
 	const [lon, setLon] = useState(0);
 	const [weather, setWeather] = useState(null);
+	const [place, setPlace] = useState("");
+	const [isclick, setIsClick] = useState(false);
+
+	const handleisclick = () => {
+		// isclick===true ? setIsClick(false): setIsClick(true);
+		setIsClick((prevValue) => !prevValue);
+		console.log("pressed");
+	};
 
 	useEffect(() => {
 		const success = (pos) => {
@@ -73,20 +81,21 @@ export default function Home() {
 				</motion.div>
 			</motion.div>
 			<div id="container">
-				<Search></Search>
-				<Cardtop day={actuallist[0]} 
-				weathercond={weather?.current.weather_code}
-				high={weather?.daily.temperature_2m_max[0]} 
-				low={weather?.daily.temperature_2m_min[0]} 
-				feel={weather?.current.apparent_temperature} 
-				humid={weather?.current.relative_humidity_2m}
-				pressure={weather?.current.surface_pressure}
-				windspeed={weather?.current.wind_speed_10m}
-				sunset={weather?.daily.sunset[0]}
-				sunrise={weather?.daily.sunrise[0]}
-				cloud={weather?.current.cloud_cover}
-				>
-				</Cardtop>
+				<Search iscllick={handleisclick}></Search>
+
+				<Cardtop
+					day={actuallist[0]}
+					weathercond={weather?.current.weather_code}
+					high={weather?.daily.temperature_2m_max[0]}
+					low={weather?.daily.temperature_2m_min[0]}
+					feel={weather?.current.apparent_temperature}
+					humid={weather?.current.relative_humidity_2m}
+					pressure={weather?.current.surface_pressure}
+					windspeed={weather?.current.wind_speed_10m}
+					sunset={weather?.daily.sunset[0]}
+					sunrise={weather?.daily.sunrise[0]}
+					cloud={weather?.current.cloud_cover}
+				></Cardtop>
 				<div id="bottomcards">
 					{actuallist.slice(1).map((days, index) => {
 						return (

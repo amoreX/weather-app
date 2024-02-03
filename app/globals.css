@@ -23,18 +23,39 @@ main #search {
   border: 3px solid rgba(255, 255, 255, 0.12);
   color: white;
   transition: border 0.38s ease-in-out;
+  padding-inline: 5px;
   margin-inline: auto;
   margin-top: 0px;
   margin-bottom: 1%;
   display: flex;
+  gap: 5px;
   justify-content: center;
-  width: 300px;
-  height: 70px;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 80px;
   border-radius: 36px;
   align-items: center;
+  transition: 0.38s ease-in-out;
 }
 main #search:hover {
   border: 3px solid rgba(255, 255, 255, 0.754);
+}
+main #search #search-icon {
+  background-color: white;
+  height: 30px;
+  display: flex;
+  width: 30px;
+  border-radius: 50%;
+}
+main #search #location {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+  color: black;
+  height: 30px;
+  display: flex;
+  border-radius: 36px;
+  padding-inline: 10px;
+  align-items: center;
 }
 main #card-top {
   border: 1px solid black;
