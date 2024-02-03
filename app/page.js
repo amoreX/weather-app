@@ -9,33 +9,53 @@ import { coords } from "./Utils/Coords";
 export default function Home() {
 	const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 	const today = new Date().getDay();
-
 	const initial = daysOfWeek.slice(0, today);
 	const later = daysOfWeek.slice(today, 7);
 	const actuallist = [...later, ...initial];
-	const anotherlist = actuallist.slice(1);
+	const [lat, setLat] = useState(0);
+	const [lon, setLon] = useState(0);
+	const [weather, setWeather] = useState(null);
 
 	useEffect(() => {
-		// You now have access to `window`
-
 		const success = (pos) => {
-			console.log(pos.coords.latitude, pos.coords.longitude);
+			setLat(pos.coords.latitude);
+			setLon(pos.coords.longitude);
 		};
 		const error = (err) => {
 			console.log(err);
 		};
-		console.log(window.innerHeight);
 		navigator.geolocation?.getCurrentPosition(success, error);
 	}, []);
 
+	useEffect(() => {
+		if (lat != 0 && lon != 0) {
+			const temp = async () => {
+				setWeather(await coords(lat, lon));
+			};
+			temp();
+			console.log(lat, lon);
+		}
+	}, [lat, lon]);
+
+	useEffect(() => {
+		console.log(weather);
+	}, [weather]);
 	return (
 		<main>
 			<div id="container">
 				<Search></Search>
-				<Cardtop day={actuallist[0]}></Cardtop>
+				<Cardtop day={actuallist[0]} weathercond={weather?.current.weather_code}></Cardtop>
 				<div id="bottomcards">
-					{anotherlist.map((days, index) => {
-						return <Cardbot day={days} key="" temp="20"></Cardbot>;
+					{actuallist.slice(1).map((days, index) => {
+						return (
+							<Cardbot
+								day={days}
+								key=""
+								temp={weather?.daily.temperature_2m_max.slice(1)[index]}
+								tempmin={weather?.daily.temperature_2m_min.slice(1)[index]}
+								weathercond={weather?.daily.weather_code.slice(1)[index]}
+							></Cardbot>
+						);
 					})}
 				</div>
 			</div>

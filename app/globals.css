@@ -75,6 +75,7 @@ main #card-top #weather {
   align-items: center;
   margin-bottom: auto;
   padding-inline: 10px;
+  font-size: 1.3rem;
   font-family: Arial, Helvetica, sans-serif;
 }
 main #card-top #time {
@@ -130,8 +131,9 @@ main #bottomcards #card-bottom:hover {
 }
 main #bottomcards #card-bottom #date {
   margin-top: auto;
+  margin-bottom: 5px;
   margin-inline: auto;
-  font-size: 1.5rem;
+  font-size: 1.5vw;
   font-weight: 100;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -145,6 +147,17 @@ main #bottomcards #card-bottom #temp {
   margin-right: auto;
   margin-left: 25px;
   font-size: 2rem;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-family: Arial, Helvetica, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+main #bottomcards #card-bottom #mintemp {
+  font-size: 1.3rem;
+  margin-left: auto;
+  margin-top: 5px;
+  margin-right: 10px;
+  color: rgba(234, 234, 234, 0.745);
   height: -moz-fit-content;
   height: fit-content;
   font-family: Arial, Helvetica, sans-serif;
