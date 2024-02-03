@@ -102,6 +102,61 @@ main #card-top #dateweek #date {
   font-size: 1.5rem;
   font-weight: 100;
 }
+main #card-top #dateweek #feel {
+  margin-top: 10px;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+main #card-top #dateweek #feel #feeltext {
+  font-size: 1.3rem;
+  color: rgba(234, 234, 234, 0.867);
+}
+main #card-top #dateweek #highlow {
+  display: flex;
+  font-size: 1.5rem;
+  gap: 5vw;
+  margin-top: 14vh;
+}
+main #card-top #dateweek #highlow #maxup {
+  display: flex;
+}
+main #card-top #dateweek #highlow #maxup #arrow {
+  width: 20px;
+  height: auto;
+}
+main #card-top #dateweek #highlow #minup {
+  display: flex;
+}
+main #card-top #dateweek #highlow #minup #arrow {
+  width: 20px;
+  height: auto;
+  transform: rotate(180deg);
+}
+main #card-top #extra {
+  overflow: hidden;
+  padding-left: 1vw;
+  display: flex;
+  font-family: helvetica;
+  gap: 2vw;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+main #card-top #extra #left {
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+}
+main #card-top #extra #left #props {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5vw;
+}
+main #card-top #extra #left #props #prop-value {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: rgba(193, 193, 193, 0.737);
+}
 main #bottomcards {
   padding-top: 1%;
   display: flex;
@@ -127,6 +182,16 @@ main #bottomcards #card-bottom {
 }
 main #bottomcards #card-bottom:hover {
   border: 3px solid rgba(255, 255, 255, 0.754);
+}
+main #bottomcards #card-bottom #uptemp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+main #bottomcards #card-bottom #uptemp #arrow1 {
+  width: 25px;
+  height: auto;
 }
 main #bottomcards #card-bottom #date {
   margin-top: auto;
@@ -161,6 +226,14 @@ main #bottomcards #card-bottom #mintemp {
   height: fit-content;
   font-family: Arial, Helvetica, sans-serif;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+main #bottomcards #card-bottom #mintemp #downtemp {
+  display: flex;
+}
+main #bottomcards #card-bottom #mintemp #downtemp #arrow2 {
+  width: 20px;
+  height: auto;
+  transform: rotate(180deg);
 }
 
 @keyframes blink {

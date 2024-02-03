@@ -61,6 +61,47 @@ export default function cardtop(props) {
 			/>
 		</svg>
 	);
+	const arrow = (
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000000">
+			<g id="SVGRepo_bgCarrier" strokeWidth={0} />
+			<g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" />
+			<g id="SVGRepo_iconCarrier">
+				{" "}
+				<path
+					d="M12 5V19M12 5L6 11M12 5L18 11"
+					stroke="#ffffff"
+					strokeWidth={2}
+					strokeLinecap="round"
+					strokeLinejoin="round"
+				/>{" "}
+			</g>
+		</svg>
+	);
+	const arrow2=(
+		<svg
+		  xmlns="http://www.w3.org/2000/svg"
+		  viewBox="0 0 24 24"
+		  fill="none"
+		>
+		  <g id="SVGRepo_bgCarrier" strokeWidth={0} />
+		  <g
+			id="SVGRepo_tracerCarrier"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		  />
+		  <g id="SVGRepo_iconCarrier">
+			{" "}
+			<path
+			  d="M12 5V19M12 5L6 11M12 5L18 11"
+			  stroke="#c7c7c7"
+			  strokeWidth={2}
+			  strokeLinecap="round"
+			  strokeLinejoin="round"
+			/>{" "}
+		  </g>
+		</svg>
+		);
+	
 
 	const choice = [
 		[sunny, "Cloudy"],
@@ -94,22 +135,19 @@ export default function cardtop(props) {
 		<motion.div
 			initial={{
 				scale: 0.1,
+				opacity:0.5
 			}}
 			transition={{
+				
                 delay:3.6,
 				type: "tween",
 				ease: "anticipate",
 				duration: 0.4,
 			}}
-			whileHover={{
-				scale: 1.02,
-				transition: {
-					type: "tween",
-					ease: "easeInOut",
-				},
-			}}
+			
 			animate={{
 				scale: 1,
+				opacity:1
 			}}
 			id="card-top"
 		>
@@ -131,11 +169,72 @@ export default function cardtop(props) {
             id="dateweek">
 				{props.day}
 				<div id="date"> {getFormattedDate()} </div>
+				<div id="feel">
+					{props.feel}
+					<div id="feeltext"> Feels like</div>
+				</div>
+				<div id="highlow">
+					<div id="maxup"><div id="arrow">{arrow}</div><div>{props.high}</div></div>
+					<div id="minup"><div id="arrow">{arrow}</div>{props.low}</div>
+				</div>
 			</motion.div>
 			<div id="bar"></div>
 			<div id="weather">
 				{choice[calcweather()][0]}
 				{choice[calcweather()][1]}
+			</div>
+			<div id="bar"></div>
+			<div id="extra">
+				<motion.div 
+				initial={{
+					x:-300
+				}}
+				transition={{
+					delay:4,
+					type:"tween",
+					ease:"anticipate",
+					duration:0.4
+				}}
+				animate={{
+					x:0
+				}}
+				id="left">
+					<div id="props">
+						Humidity <div id="prop-value">{props.humid}</div>
+					</div>
+					<div id="props">
+						Pressure<div id="prop-value">{props.pressure}pa</div>
+					</div>
+					<div id="props">
+						Sunrise <div id="prop-value">{props.sunrise?.slice(-5)}</div>
+					</div>
+					
+				</motion.div>
+				<motion.div 
+				initial={{
+					x:300
+				}}
+				transition={{
+					delay:4.45,
+					type:"tween",
+					ease:"anticipate",
+					duration:0.4
+				}}
+				animate={{
+					x:0
+				}}
+				id="left">
+					<div id="props">
+						Cloudy <div id="prop-value">{props.cloud}%</div>
+					</div>
+					<div id="props">
+						Wind Speed <div id="prop-value">{props.windspeed}km/h</div>
+					</div>
+					<div id="props">
+						Sunset <div id="prop-value">{props.sunset?.slice(-5)}</div>
+					</div>
+				</motion.div>
+				
 			</div>
 			<div id="bar"></div>
 

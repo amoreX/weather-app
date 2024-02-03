@@ -74,7 +74,19 @@ export default function Home() {
 			</motion.div>
 			<div id="container">
 				<Search></Search>
-				<Cardtop day={actuallist[0]} weathercond={weather?.current.weather_code}></Cardtop>
+				<Cardtop day={actuallist[0]} 
+				weathercond={weather?.current.weather_code}
+				high={weather?.daily.temperature_2m_max[0]} 
+				low={weather?.daily.temperature_2m_min[0]} 
+				feel={weather?.current.apparent_temperature} 
+				humid={weather?.current.relative_humidity_2m}
+				pressure={weather?.current.surface_pressure}
+				windspeed={weather?.current.wind_speed_10m}
+				sunset={weather?.daily.sunset[0]}
+				sunrise={weather?.daily.sunrise[0]}
+				cloud={weather?.current.cloud_cover}
+				>
+				</Cardtop>
 				<div id="bottomcards">
 					{actuallist.slice(1).map((days, index) => {
 						return (

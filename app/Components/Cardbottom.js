@@ -59,6 +59,47 @@ export default function cardbottom(props) {
 			/>
 		</svg>
 	);
+
+	const arrow = (
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000000">
+			<g id="SVGRepo_bgCarrier" strokeWidth={0} />
+			<g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" />
+			<g id="SVGRepo_iconCarrier">
+				{" "}
+				<path
+					d="M12 5V19M12 5L6 11M12 5L18 11"
+					stroke="#ffffff"
+					strokeWidth={2}
+					strokeLinecap="round"
+					strokeLinejoin="round"
+				/>{" "}
+			</g>
+		</svg>
+	);
+	const arrow2=(
+		<svg
+		  xmlns="http://www.w3.org/2000/svg"
+		  viewBox="0 0 24 24"
+		  fill="none"
+		>
+		  <g id="SVGRepo_bgCarrier" strokeWidth={0} />
+		  <g
+			id="SVGRepo_tracerCarrier"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		  />
+		  <g id="SVGRepo_iconCarrier">
+			{" "}
+			<path
+			  d="M12 5V19M12 5L6 11M12 5L18 11"
+			  stroke="#c7c7c7"
+			  strokeWidth={2}
+			  strokeLinecap="round"
+			  strokeLinejoin="round"
+			/>{" "}
+		  </g>
+		</svg>
+		);
 	const choice = [sunny, rainy, cloudy];
 
 	const calcweather = () => {
@@ -76,71 +117,80 @@ export default function cardbottom(props) {
 				scale: 0.1,
 			}}
 			transition={{
-				delay: 3.5+(props.index * 0.15),
+				delay: 3.5 + props.index * 0.15,
 				type: "tween",
 				ease: "anticipate",
 				duration: 0.6,
-			}}
-			whileHover={{
-				scale: 1.05,
-				transition: {
-					type: "tween",
-					ease: "easeInOut",
-				},
 			}}
 			animate={{
 				scale: 1,
 			}}
 			id="card-bottom"
 		>
-			<motion.div initial={{
-                x:-100,
-                opacity: 0.
-            }} 
-            animate={{
-                x:0,
-                opacity: 1,
-            }} 
-            transition={{
-                delay: (props.index * 0.15)+4.5,
-                type: "tween",
-                ease: "anticipate",
-                duration: 0.6,
-            }} 
-            id="temp">
-				{props.temp}°C
+			<motion.div
+				initial={{
+					x: -100,
+					opacity: 0,
+				}}
+				animate={{
+					x: 0,
+					opacity: 1,
+				}}
+				transition={{
+					delay: props.index * 0.15 + 4.5,
+					type: "tween",
+					ease: "anticipate",
+					duration: 0.6,
+				}}
+				id="temp"
+			>
+				<div id="uptemp">
+					<div id="arrow1">{arrow}</div>
+					{props.temp}°C
+				</div>
 			</motion.div>
 			<div id="weather">{choice[calcweather()]}</div>
-			<motion.div initial={{
-                x:100,
-                opacity: 0.
-            }} 
-            animate={{
-                x:0,
-                opacity: 1,
-            }} 
-            transition={{
-                delay: (props.index * 0.15)+4.5,
-                type: "tween",
-                ease: "anticipate",
-                duration: 0.6,
-            }}
-            id="mintemp">{props.tempmin}°C</motion.div>
-			<motion.div initial={{
-                y:100,
-                opacity: 0.
-            }} 
-            animate={{
-                y:0,
-                opacity: 1,
-            }} 
-            transition={{
-                delay: (props.index * 0.15)+5,
-                type: "tween",
-                ease: "anticipate",
-                duration: 0.6,
-            }}
-            id="date">{props.day}</motion.div>
+			<motion.div
+				initial={{
+					x: 100,
+					opacity: 0,
+				}}
+				animate={{
+					x: 0,
+					opacity: 1,
+				}}
+				transition={{
+					delay: props.index * 0.15 + 4.5,
+					type: "tween",
+					ease: "anticipate",
+					duration: 0.6,
+				}}
+				id="mintemp"
+			>
+				<div id="downtemp">
+					<div id="arrow2">{arrow2}</div>
+				{props.tempmin}°C
+				</div>
+			</motion.div>
+			<motion.div
+				initial={{
+					y: 100,
+					opacity: 0,
+				}}
+				animate={{
+					y: 0,
+					opacity: 1,
+				}}
+				transition={{
+					delay: props.index * 0.15 + 5,
+					type: "tween",
+					ease: "anticipate",
+					duration: 0.6,
+				}}
+				id="date"
+			>
+				{props.day}
+			</motion.div>
 		</motion.div>
 	);
 }
