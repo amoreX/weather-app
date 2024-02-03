@@ -256,6 +256,19 @@ main #bottomcards #card-bottom #mintemp #downtemp #arrow2 {
   height: auto;
   transform: rotate(180deg);
 }
+main #modal {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  z-index: 5;
+  width: 100vw;
+  transform: translateY(-15px);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  margin: 0px;
+}
 
 @keyframes blink {
   0% {

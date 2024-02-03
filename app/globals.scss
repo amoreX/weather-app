@@ -278,6 +278,20 @@ main{
 
 		}
 	}
+
+	#modal{
+		position:absolute;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		height:100vh;
+		z-index: 5;
+		width:100vw;
+		transform:translateY(-15px);
+		backdrop-filter: blur(10px);
+		margin:0px;
+
+	}
 }
 
 @keyframes blink{

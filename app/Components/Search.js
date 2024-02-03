@@ -1,6 +1,6 @@
 
 
-export default function search({iscllick}){
+export default function search({iscllick,placename}){
     const search=(<svg
         xmlns="http://www.w3.org/2000/svg"
         
@@ -27,7 +27,7 @@ export default function search({iscllick}){
     
     return(
         <div id="search" onClick={() => iscllick()}>
-            <div id="location"> Bengaluru,India </div>
+            <div id="location"> {placename} </div>
             <div id="search-icon">
                 {search}
             </div>

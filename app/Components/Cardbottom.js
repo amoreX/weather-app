@@ -76,30 +76,22 @@ export default function cardbottom(props) {
 			</g>
 		</svg>
 	);
-	const arrow2=(
-		<svg
-		  xmlns="http://www.w3.org/2000/svg"
-		  viewBox="0 0 24 24"
-		  fill="none"
-		>
-		  <g id="SVGRepo_bgCarrier" strokeWidth={0} />
-		  <g
-			id="SVGRepo_tracerCarrier"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-		  />
-		  <g id="SVGRepo_iconCarrier">
-			{" "}
-			<path
-			  d="M12 5V19M12 5L6 11M12 5L18 11"
-			  stroke="#c7c7c7"
-			  strokeWidth={2}
-			  strokeLinecap="round"
-			  strokeLinejoin="round"
-			/>{" "}
-		  </g>
+	const arrow2 = (
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+			<g id="SVGRepo_bgCarrier" strokeWidth={0} />
+			<g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" />
+			<g id="SVGRepo_iconCarrier">
+				{" "}
+				<path
+					d="M12 5V19M12 5L6 11M12 5L18 11"
+					stroke="#c7c7c7"
+					strokeWidth={2}
+					strokeLinecap="round"
+					strokeLinejoin="round"
+				/>{" "}
+			</g>
 		</svg>
-		);
+	);
 	const choice = [sunny, rainy, cloudy];
 
 	const calcweather = () => {
@@ -117,7 +109,7 @@ export default function cardbottom(props) {
 				scale: 0.1,
 			}}
 			transition={{
-				delay: 3.5 + props.index * 0.15,
+				delay: 3.2 + props.index * 0.15,
 				type: "tween",
 				ease: "anticipate",
 				duration: 0.6,
@@ -169,7 +161,7 @@ export default function cardbottom(props) {
 			>
 				<div id="downtemp">
 					<div id="arrow2">{arrow2}</div>
-				{props.tempmin}°C
+					{props.tempmin}°C
 				</div>
 			</motion.div>
 			<motion.div

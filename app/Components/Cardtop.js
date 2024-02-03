@@ -77,31 +77,22 @@ export default function cardtop(props) {
 			</g>
 		</svg>
 	);
-	const arrow2=(
-		<svg
-		  xmlns="http://www.w3.org/2000/svg"
-		  viewBox="0 0 24 24"
-		  fill="none"
-		>
-		  <g id="SVGRepo_bgCarrier" strokeWidth={0} />
-		  <g
-			id="SVGRepo_tracerCarrier"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-		  />
-		  <g id="SVGRepo_iconCarrier">
-			{" "}
-			<path
-			  d="M12 5V19M12 5L6 11M12 5L18 11"
-			  stroke="#c7c7c7"
-			  strokeWidth={2}
-			  strokeLinecap="round"
-			  strokeLinejoin="round"
-			/>{" "}
-		  </g>
+	const arrow2 = (
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+			<g id="SVGRepo_bgCarrier" strokeWidth={0} />
+			<g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" />
+			<g id="SVGRepo_iconCarrier">
+				{" "}
+				<path
+					d="M12 5V19M12 5L6 11M12 5L18 11"
+					stroke="#c7c7c7"
+					strokeWidth={2}
+					strokeLinecap="round"
+					strokeLinejoin="round"
+				/>{" "}
+			</g>
 		</svg>
-		);
-	
+	);
 
 	const choice = [
 		[sunny, "Cloudy"],
@@ -135,47 +126,49 @@ export default function cardtop(props) {
 		<motion.div
 			initial={{
 				scale: 0.1,
-				opacity:0.5
+				opacity: 0.5,
 			}}
 			transition={{
-				
-                delay:3.6,
+				delay: 3.2,
 				type: "tween",
 				ease: "anticipate",
 				duration: 0.4,
 			}}
-			
 			animate={{
 				scale: 1,
-				opacity:1
+				opacity: 1,
 			}}
 			id="card-top"
 		>
-			<motion.div 
-            initial={{
-                y:-100,
-                opacity: 0.
-            }} 
-            animate={{
-                y:0,
-                opacity: 1,
-            }} 
-            transition={{
-                delay: 4.2,
-                type: "tween",
-                ease: "anticipate",
-                duration: 0.6,
-            }}
-            id="dateweek">
+			<motion.div
+				initial={{
+					y: -100,
+					opacity: 0,
+				}}
+				animate={{
+					y: 0,
+					opacity: 1,
+				}}
+				transition={{
+					delay: 4.2,
+					type: "tween",
+					ease: "anticipate",
+					duration: 0.6,
+				}}
+				id="dateweek"
+			>
 				{props.day}
 				<div id="date"> {getFormattedDate()} </div>
-				<div id="feel">
-					{props.feel}°C
-					
-				</div>
+				<div id="feel">{props.feel}°C</div>
 				<div id="highlow">
-					<div id="maxup"><div id="arrow">{arrow}</div><div>{props.high}</div></div>
-					<div id="minup"><div id="arrow">{arrow}</div>{props.low}</div>
+					<div id="maxup">
+						<div id="arrow">{arrow}</div>
+						<div>{props.high}</div>
+					</div>
+					<div id="minup">
+						<div id="arrow">{arrow}</div>
+						{props.low}
+					</div>
 				</div>
 			</motion.div>
 			<div id="bar"></div>
@@ -185,20 +178,21 @@ export default function cardtop(props) {
 			</div>
 			<div id="bar"></div>
 			<div id="extra">
-				<motion.div 
-				initial={{
-					x:-300
-				}}
-				transition={{
-					delay:4,
-					type:"tween",
-					ease:"anticipate",
-					duration:0.4
-				}}
-				animate={{
-					x:0
-				}}
-				id="left">
+				<motion.div
+					initial={{
+						x: -300,
+					}}
+					transition={{
+						delay: 4,
+						type: "tween",
+						ease: "anticipate",
+						duration: 0.4,
+					}}
+					animate={{
+						x: 0,
+					}}
+					id="left"
+				>
 					<div id="props">
 						Humidity <div id="prop-value">{props.humid}</div>
 					</div>
@@ -208,22 +202,22 @@ export default function cardtop(props) {
 					<div id="props">
 						Sunrise <div id="prop-value">{props.sunrise?.slice(-5)}</div>
 					</div>
-					
 				</motion.div>
-				<motion.div 
-				initial={{
-					x:300
-				}}
-				transition={{
-					delay:4.45,
-					type:"tween",
-					ease:"anticipate",
-					duration:0.4
-				}}
-				animate={{
-					x:0
-				}}
-				id="left">
+				<motion.div
+					initial={{
+						x: 300,
+					}}
+					transition={{
+						delay: 4.45,
+						type: "tween",
+						ease: "anticipate",
+						duration: 0.4,
+					}}
+					animate={{
+						x: 0,
+					}}
+					id="left"
+				>
 					<div id="props">
 						Cloudy <div id="prop-value">{props.cloud}%</div>
 					</div>
@@ -234,7 +228,6 @@ export default function cardtop(props) {
 						Sunset <div id="prop-value">{props.sunset?.slice(-5)}</div>
 					</div>
 				</motion.div>
-				
 			</div>
 			<div id="bar"></div>
 

@@ -3,6 +3,9 @@
 import Cardtop from "./Components/Cardtop";
 import Cardbot from "./Components/Cardbottom";
 import Search from "./Components/Search";
+import Modall from "./Components/Placesearch";
+import { getcoords } from "./Utils/getcoords";
+import { placename } from "./Utils/placename";
 import { useState, useEffect } from "react";
 import { coords } from "./Utils/Coords";
 import { motion } from "framer-motion";
@@ -20,9 +23,12 @@ export default function Home() {
 	const [isclick, setIsClick] = useState(false);
 
 	const handleisclick = () => {
-		// isclick===true ? setIsClick(false): setIsClick(true);
 		setIsClick((prevValue) => !prevValue);
 		console.log("pressed");
+	};
+
+	const handleplacechange = (input) => {
+		setPlace(input);
 	};
 
 	useEffect(() => {
@@ -40,6 +46,11 @@ export default function Home() {
 		if (lat != 0 && lon != 0) {
 			const temp = async () => {
 				setWeather(await coords(lat, lon));
+				const nname = await placename(lat, lon);
+				if (lat && lon) {
+					const actuallname = nname.address.city + "," + nname.address.country;
+					setPlace(actuallname);
+				}
 			};
 			temp();
 			console.log(lat, lon);
@@ -49,6 +60,22 @@ export default function Home() {
 	useEffect(() => {
 		console.log(weather);
 	}, [weather]);
+
+	useEffect(() => {
+		console.log(place);
+		const temp1 = async () => {
+			const vale = await getcoords(place);
+			setWeather(await coords(vale?.lat, vale?.lon));
+			const name = await placename(vale?.lat, vale?.lon);
+			if (vale?.lat && vale?.lon) {
+				const actualname = name.address.city + "," + name.address.country;
+				console.log(actualname);
+				setPlace(actualname);
+			}
+			console.log(vale);
+		};
+		temp1();
+	}, [place]);
 	return (
 		<main>
 			<motion.div
@@ -81,7 +108,7 @@ export default function Home() {
 				</motion.div>
 			</motion.div>
 			<div id="container">
-				<Search iscllick={handleisclick}></Search>
+				<Search iscllick={handleisclick} placename={place}></Search>
 
 				<Cardtop
 					day={actuallist[0]}
@@ -110,6 +137,12 @@ export default function Home() {
 						);
 					})}
 				</div>
+
+				{isclick === true ? (
+					<Modall iscllick={handleisclick} change={handleplacechange}></Modall>
+				) : (
+					<div />
+				)}
 			</div>
 		</main>
 	);
