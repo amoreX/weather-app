@@ -1,7 +1,7 @@
 import Time from "./Time";
 export default function cardtop(props) {
 	const cloudy = (
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="icon" version="1.1">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" className="icon" version="1.1">
 			<path
 				d="M729.6 626.56S666.24 481.28 536.96 490.24c-1.28 0-152.96-4.48-179.84 189.44 0-1.28-161.28-15.36-172.16 106.24 1.28 0.64-12.8 156.8 190.72 143.36l445.44 0.768s179.84-75.264 106.88-220.16-198.4-83.328-198.4-83.328z"
 				fill="#FFFFFF"
@@ -21,7 +21,7 @@ export default function cardtop(props) {
 		</svg>
 	);
 	const rainy = (
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="icon" version="1.1">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" className="icon" version="1.1">
 			<path
 				d="M725.333333 576c-152.917333 0-277.333333-124.416-277.333333-277.333333S572.416 21.333333 725.333333 21.333333h21.333334v21.333334c0 129.386667 105.28 234.666667 234.666666 234.666666h21.333334v21.333334c0 152.917333-124.416 277.333333-277.333334 277.333333z"
 				fill="#EFD358"
@@ -93,6 +93,7 @@ export default function cardtop(props) {
 			</g>
 		</svg>
 	);
+
 	const choice = [cloudy, rainy, sunny];
 	const getFormattedDate = () => {
 		const today = new Date();
