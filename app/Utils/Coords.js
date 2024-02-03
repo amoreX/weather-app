@@ -9,5 +9,5 @@ export function coords() {
 		console.log(err);
 	};
 
-	navigator.geolocation?.getCurrentPosition(success, error);
+	window.Geolocation.getCurrentPosition(success, error);
 }

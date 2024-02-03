@@ -3,7 +3,7 @@
 import Cardtop from "./Components/Cardtop";
 import Cardbot from "./Components/Cardbottom";
 import Search from "./Components/Search";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { coords } from "./Utils/Coords";
 
 export default function Home() {
@@ -15,11 +15,18 @@ export default function Home() {
 	const actuallist = [...later, ...initial];
 	const anotherlist = actuallist.slice(1);
 
-  useEffect(() => {
-    if (navigator.geolocation){
-      coords();
-    }
-  },[navigator.geolocation]);
+	useEffect(() => {
+		// You now have access to `window`
+
+		const success = (pos) => {
+			console.log(pos.coords.latitude, pos.coords.longitude);
+		};
+		const error = (err) => {
+			console.log(err);
+		};
+		console.log(window.innerHeight);
+		navigator.geolocation?.getCurrentPosition(success, error);
+	}, []);
 
 	return (
 		<main>
@@ -31,7 +38,6 @@ export default function Home() {
 						return <Cardbot day={days} key="" temp="20"></Cardbot>;
 					})}
 				</div>
-				
 			</div>
 		</main>
 	);
