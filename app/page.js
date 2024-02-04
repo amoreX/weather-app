@@ -105,7 +105,7 @@ export default function Home() {
 					animate={{ y: 0, opacity: 1 }}
 					transition={{ delay: 1, type: "tween", ease: "easeIn" }}
 				>
-					Getting your site Ready ;){" "}
+					Getting your site ready ;){" "}
 				</motion.div>
 			</motion.div>
 			<div id="container">

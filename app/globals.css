@@ -17,6 +17,7 @@ body {
 }
 
 main #search {
+  cursor: pointer;
   -webkit-backdrop-filter: blur(7px);
           backdrop-filter: blur(7px);
   background-color: rgba(78, 78, 78, 0.359);
@@ -103,7 +104,7 @@ main #card-top #time {
   display: flex;
   align-items: center;
   margin-right: 4%;
-  font-size: 200px;
+  font-size: 15vw;
   font-family: Arial, Helvetica, sans-serif;
 }
 main #card-top #time #colon {
@@ -114,13 +115,13 @@ main #card-top #time #colon {
 main #card-top #dateweek {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 300;
-  font-size: 3.2rem;
+  font-size: 3.2vw;
   margin-left: 25px;
   margin-top: 25px;
 }
 main #card-top #dateweek #date {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.5vw;
   font-weight: 100;
 }
 main #card-top #dateweek #feel {
@@ -136,7 +137,7 @@ main #card-top #dateweek #feel #feeltext {
 }
 main #card-top #dateweek #highlow {
   display: flex;
-  font-size: 1.5rem;
+  font-size: 1.5vw;
   gap: 5vw;
   margin-top: 14vh;
 }
@@ -209,6 +210,7 @@ main #bottomcards #card-bottom #uptemp {
   align-items: center;
   justify-content: center;
   height: 100%;
+  font-size: 2.5vw;
 }
 main #bottomcards #card-bottom #uptemp #arrow1 {
   width: 25px;
@@ -225,6 +227,8 @@ main #bottomcards #card-bottom #date {
 main #bottomcards #card-bottom #weather {
   width: 11vw;
   height: auto;
+  margin-top: auto;
+  margin-bottom: auto;
   margin-inline: auto;
 }
 main #bottomcards #card-bottom #temp {
@@ -250,6 +254,7 @@ main #bottomcards #card-bottom #mintemp {
 }
 main #bottomcards #card-bottom #mintemp #downtemp {
   display: flex;
+  font-size: 1.5rem;
 }
 main #bottomcards #card-bottom #mintemp #downtemp #arrow2 {
   width: 20px;

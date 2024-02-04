@@ -109,7 +109,7 @@ export default function cardbottom(props) {
 				scale: 0.1,
 			}}
 			transition={{
-				delay: 3.2 + props.index * 0.15,
+				delay: 3.6 + props.index * 0.15,
 				type: "tween",
 				ease: "anticipate",
 				duration: 0.6,
@@ -129,7 +129,7 @@ export default function cardbottom(props) {
 					opacity: 1,
 				}}
 				transition={{
-					delay: props.index * 0.15 + 4.5,
+					delay: props.index * 0.15 + 4.3,
 					type: "tween",
 					ease: "anticipate",
 					duration: 0.6,
@@ -152,7 +152,7 @@ export default function cardbottom(props) {
 					opacity: 1,
 				}}
 				transition={{
-					delay: props.index * 0.15 + 4.5,
+					delay: props.index * 0.15 + 4.3,
 					type: "tween",
 					ease: "anticipate",
 					duration: 0.6,

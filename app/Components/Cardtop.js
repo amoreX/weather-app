@@ -126,10 +126,10 @@ export default function cardtop(props) {
 		<motion.div
 			initial={{
 				scale: 0.1,
-				opacity: 0.5,
+				opacity: 0.3,
 			}}
 			transition={{
-				delay: 3.2,
+				delay: 3.7,
 				type: "tween",
 				ease: "anticipate",
 				duration: 0.4,
@@ -150,7 +150,7 @@ export default function cardtop(props) {
 					opacity: 1,
 				}}
 				transition={{
-					delay: 4.2,
+					delay: 4.7,
 					type: "tween",
 					ease: "anticipate",
 					duration: 0.6,
@@ -183,7 +183,7 @@ export default function cardtop(props) {
 						x: -300,
 					}}
 					transition={{
-						delay: 4,
+						delay: 4.2,
 						type: "tween",
 						ease: "anticipate",
 						duration: 0.4,
