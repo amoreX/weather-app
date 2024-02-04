@@ -109,7 +109,7 @@ export default function Home() {
 				</motion.div>
 			</motion.div>
 			<div id="container">
-        <Git/>
+				<Git />
 				<Search iscllick={handleisclick} placename={place}></Search>
 
 				<Cardtop
